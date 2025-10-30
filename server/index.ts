@@ -66,16 +66,45 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+  
+  // Try different host configurations to handle Windows networking issues
+  const hosts = ['127.0.0.1', 'localhost', '0.0.0.0'];
+  let serverStarted = false;
+
+  for (const host of hosts) {
+    try {
+      await new Promise<void>((resolve, reject) => {
+        const listenOptions: any = { port, host };
+        
+        // Only use reusePort on systems that support it (not Windows)
+        if (process.platform !== 'win32') {
+          listenOptions.reusePort = true;
+        }
+
+        server.listen(listenOptions, () => {
+          log(`serving on ${host}:${port}`);
+          serverStarted = true;
+          resolve();
+        }).on('error', (err: NodeJS.ErrnoException) => {
+          reject(err);
+        });
+      });
+      break; // If successful, exit the loop
+    } catch (err: any) {
+      if (err.code === 'ENOTSUP' || err.code === 'EADDRINUSE') {
+        log(`Failed to bind to ${host}:${port} - ${err.code}`);
+        // Continue to next host
+        continue;
+      } else {
+        // For other errors, throw
+        throw err;
+      }
+    }
+  }
+
+  if (!serverStarted) {
+    console.error(`Failed to start server on port ${port} with any host configuration`);
+    process.exit(1);
+  }
 })();
