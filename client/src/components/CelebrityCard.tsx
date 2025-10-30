@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { useLocation } from "wouter";
 import { Heart, MapPin, Eye } from "lucide-react";
 import { SiInstagram, SiYoutube, SiX } from "react-icons/si";
 import { Button } from "@/components/ui/button";
@@ -13,17 +13,23 @@ interface CelebrityCardProps {
 }
 
 export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: CelebrityCardProps) {
+  const [, setLocation] = useLocation();
+
+  const handleCardClick = () => {
+    setLocation(`/celebrity/${celebrity.slug}`);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="group relative overflow-hidden rounded-2xl hover-elevate active-elevate-2"
+      className="group relative overflow-hidden rounded-2xl hover-elevate active-elevate-2 cursor-pointer"
       data-testid={`card-celebrity-${celebrity.id}`}
+      onClick={handleCardClick}
     >
-      <Link href={`/celebrity/${celebrity.slug}`}>
-        <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+      <div className="relative aspect-[3/4] overflow-hidden bg-muted">
           <img 
             src={celebrity.image} 
             alt={celebrity.name}
@@ -78,7 +84,11 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
                       <a
                         key={idx}
                         href={link}
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                        }}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-7 h-7 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors"
                         data-testid={`link-social-${idx}`}
                       >
@@ -98,7 +108,6 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
             </div>
           </div>
         </div>
-      </Link>
     </motion.div>
   );
 }
