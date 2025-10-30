@@ -37,15 +37,14 @@ export function Navigation() {
             </Link>
 
             <div className="hidden md:flex items-center gap-6">
-              <Link href="/">
-                <a 
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    location === '/' ? 'text-primary' : 'text-foreground'
-                  }`}
-                  data-testid="link-home"
-                >
-                  Home
-                </a>
+              <Link 
+                href="/"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  location === '/' ? 'text-primary' : 'text-foreground'
+                }`}
+                data-testid="link-home"
+              >
+                Home
               </Link>
               <div className="group relative">
                 <button 
@@ -59,13 +58,13 @@ export function Navigation() {
                 </button>
                 <div className="absolute top-full left-0 mt-2 w-64 glassmorphic border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
                   {categories.map((category) => (
-                    <Link key={category} href={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}>
-                      <a 
-                        className="block px-4 py-2 text-sm rounded-lg hover-elevate transition-colors"
-                        data-testid={`link-category-${category.toLowerCase().replace(/\s+/g, '-')}`}
-                      >
-                        {category}
-                      </a>
+                    <Link 
+                      key={category} 
+                      href={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="block px-4 py-2 text-sm rounded-lg hover-elevate transition-colors"
+                      data-testid={`link-category-${category.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      {category}
                     </Link>
                   ))}
                 </div>
@@ -90,10 +89,13 @@ export function Navigation() {
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
           <div className="fixed top-16 left-0 right-0 bottom-0 glassmorphic border-t border-white/10 overflow-y-auto">
             <div className="p-6 space-y-4">
-              <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                <a className="block py-2 text-lg font-medium" data-testid="link-mobile-home">
-                  Home
-                </a>
+              <Link 
+                href="/" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2 text-lg font-medium" 
+                data-testid="link-mobile-home"
+              >
+                Home
               </Link>
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Categories</p>
@@ -102,10 +104,9 @@ export function Navigation() {
                     key={category} 
                     href={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
                     onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 pl-4 hover-elevate rounded-lg transition-colors"
                   >
-                    <a className="block py-2 pl-4 hover-elevate rounded-lg transition-colors">
-                      {category}
-                    </a>
+                    {category}
                   </Link>
                 ))}
               </div>

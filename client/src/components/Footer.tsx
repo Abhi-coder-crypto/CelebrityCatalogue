@@ -59,10 +59,12 @@ export function Footer() {
             <h4 className="font-accent font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/">
-                  <a className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-home">
-                    Home
-                  </a>
+                <Link 
+                  href="/"
+                  className="text-muted-foreground hover:text-primary transition-colors" 
+                  data-testid="link-footer-home"
+                >
+                  Home
                 </Link>
               </li>
               <li>
@@ -88,10 +90,11 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               {categories.slice(0, 5).map((category) => (
                 <li key={category}>
-                  <Link href={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}>
-                    <a className="text-muted-foreground hover:text-primary transition-colors">
-                      {category}
-                    </a>
+                  <Link 
+                    href={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {category}
                   </Link>
                 </li>
               ))}
