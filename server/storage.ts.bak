@@ -35,6 +35,12 @@ export class MemStorage implements IStorage {
         category: "Singers",
         image: "/attached_assets/generated_images/Elegant_female_singer_portrait_36ed9407.png",
         bio: "Award-winning playback singer known for her versatile voice across multiple genres. With over 500 songs to her credit, she has captivated audiences worldwide with her soulful performances and chart-topping hits.",
+        achievements: [
+          "National Film Award for Best Female Playback Singer",
+          "3 Filmfare Awards",
+          "Performed at Madison Square Garden",
+          "50+ Million streams on Spotify"
+        ],
         socialLinks: [
           "https://instagram.com/priyasharma",
           "https://youtube.com/priyasharma",
@@ -44,6 +50,7 @@ export class MemStorage implements IStorage {
         gender: "Female",
         language: ["Hindi", "English", "Tamil"],
         location: "Mumbai",
+        priceRange: "Premium",
         eventTypes: ["Wedding", "Concert", "Corporate"],
         isFeatured: true,
       },
@@ -53,6 +60,12 @@ export class MemStorage implements IStorage {
         category: "Actors",
         image: "/attached_assets/generated_images/Professional_male_actor_headshot_a0a56235.png",
         bio: "Acclaimed Bollywood actor with a career spanning two decades. Known for his intense performances and versatility, he has won hearts with his powerful portrayals in both commercial and independent cinema.",
+        achievements: [
+          "2 National Film Awards",
+          "5 Filmfare Awards for Best Actor",
+          "Padma Shri Recipient",
+          "Over 75 films across multiple languages"
+        ],
         socialLinks: [
           "https://instagram.com/rajeshkumar",
           "https://twitter.com/rajeshkumar",
@@ -62,6 +75,7 @@ export class MemStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Mumbai",
+        priceRange: "Premium",
         eventTypes: ["Corporate", "Private Party"],
         isFeatured: true,
       },
@@ -71,6 +85,12 @@ export class MemStorage implements IStorage {
         category: "Comedians",
         image: "/attached_assets/generated_images/Comedian_performing_on_stage_864e615e.png",
         bio: "Stand-up comedian extraordinaire who brings the house down with his observational humor and witty takes on everyday life. His unique style and relatable content have made him a favorite across India.",
+        achievements: [
+          "5 Million+ YouTube subscribers",
+          "Amazon Prime Special 'Laugh Out Loud'",
+          "Toured 50+ cities worldwide",
+          "Comedy Central India Star Performer"
+        ],
         socialLinks: [
           "https://instagram.com/amittandon",
           "https://youtube.com/amittandon",
@@ -80,6 +100,7 @@ export class MemStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Delhi",
+        priceRange: "Mid-Range",
         eventTypes: ["Corporate", "Private Party", "Wedding"],
         isFeatured: false,
       },
@@ -89,6 +110,12 @@ export class MemStorage implements IStorage {
         category: "Influencers",
         image: "/attached_assets/generated_images/Modern_social_media_influencer_37f081d2.png",
         bio: "Digital content creator and lifestyle influencer with a massive following. Known for her authentic content on fashion, travel, and lifestyle, she has collaborated with top brands and inspired millions.",
+        achievements: [
+          "10 Million+ Instagram followers",
+          "Featured in Forbes 30 Under 30",
+          "Brand partnerships with 100+ companies",
+          "Travel & Lifestyle Blog of the Year"
+        ],
         socialLinks: [
           "https://instagram.com/nehapatel",
           "https://youtube.com/nehapatel",
@@ -98,6 +125,7 @@ export class MemStorage implements IStorage {
         gender: "Female",
         language: ["Hindi", "English", "Gujarati"],
         location: "Bangalore",
+        priceRange: "Mid-Range",
         eventTypes: ["Corporate", "Private Party"],
         isFeatured: true,
       },
@@ -107,6 +135,12 @@ export class MemStorage implements IStorage {
         category: "Choreographers",
         image: "/attached_assets/generated_images/Professional_choreographer_dancing_36eaf6d7.png",
         bio: "Celebrity choreographer who has redefined dance in Indian cinema. His innovative choreography and unique style have made him the go-to choice for Bollywood's biggest productions.",
+        achievements: [
+          "Choreographed 200+ films",
+          "3 National Film Awards",
+          "International Dance Award Winner",
+          "Mentored 1000+ aspiring dancers"
+        ],
         socialLinks: [
           "https://instagram.com/vikramsingh",
           "https://youtube.com/vikramsingh",
@@ -116,6 +150,7 @@ export class MemStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English", "Punjabi"],
         location: "Mumbai",
+        priceRange: "Premium",
         eventTypes: ["Wedding", "Corporate", "Concert"],
         isFeatured: false,
       },
@@ -125,6 +160,12 @@ export class MemStorage implements IStorage {
         category: "Chefs",
         image: "/attached_assets/generated_images/Celebrity_chef_professional_portrait_882fe472.png",
         bio: "Celebrity chef and culinary innovator who brings traditional Indian flavors to modern cuisine. Her restaurants have won multiple Michelin stars and she's a beloved TV personality.",
+        achievements: [
+          "2 Michelin Star Restaurants",
+          "MasterChef India Judge",
+          "Author of 5 bestselling cookbooks",
+          "Times Food Awards - Chef of the Year"
+        ],
         socialLinks: [
           "https://instagram.com/chefritu",
           "https://youtube.com/chefritu",
@@ -134,6 +175,7 @@ export class MemStorage implements IStorage {
         gender: "Female",
         language: ["Hindi", "English"],
         location: "Delhi",
+        priceRange: "Premium",
         eventTypes: ["Corporate", "Private Party"],
         isFeatured: false,
       },
@@ -143,6 +185,12 @@ export class MemStorage implements IStorage {
         category: "Motivational Speakers",
         image: "/attached_assets/generated_images/Motivational_speaker_on_stage_6391bb2e.png",
         bio: "Renowned motivational speaker and life coach who has transformed millions of lives with his powerful messages. His talks on leadership, success, and personal growth are legendary.",
+        achievements: [
+          "Addressed 2000+ corporate events",
+          "Bestselling author of 8 books",
+          "TEDx Speaker with 20M+ views",
+          "Awarded India's Top Motivational Speaker"
+        ],
         socialLinks: [
           "https://instagram.com/drarunsharma",
           "https://youtube.com/drarunsharma",
@@ -152,6 +200,7 @@ export class MemStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Hyderabad",
+        priceRange: "Premium",
         eventTypes: ["Corporate"],
         isFeatured: true,
       },
@@ -161,6 +210,12 @@ export class MemStorage implements IStorage {
         category: "Singers",
         image: "/attached_assets/generated_images/Young_male_musician_portrait_655aec8f.png",
         bio: "Young and talented singer-songwriter who has taken the indie music scene by storm. His soulful voice and original compositions have earned him a dedicated fanbase.",
+        achievements: [
+          "MTV Unplugged Season Winner",
+          "3 Million+ Spotify monthly listeners",
+          "Performed at Sunburn Festival",
+          "YouTube Silver Play Button"
+        ],
         socialLinks: [
           "https://instagram.com/arjunmehta",
           "https://youtube.com/arjunmehta",
@@ -170,6 +225,7 @@ export class MemStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Bangalore",
+        priceRange: "Budget",
         eventTypes: ["Wedding", "Concert", "Private Party"],
         isFeatured: false,
       },
@@ -259,6 +315,12 @@ export class MongoStorage implements IStorage {
         category: "Singers",
         image: "/attached_assets/generated_images/Elegant_female_singer_portrait_36ed9407.png",
         bio: "Award-winning playback singer known for her versatile voice across multiple genres. With over 500 songs to her credit, she has captivated audiences worldwide with her soulful performances and chart-topping hits.",
+        achievements: [
+          "National Film Award for Best Female Playback Singer",
+          "3 Filmfare Awards",
+          "Performed at Madison Square Garden",
+          "50+ Million streams on Spotify"
+        ],
         socialLinks: [
           "https://instagram.com/priyasharma",
           "https://youtube.com/priyasharma",
@@ -268,6 +330,7 @@ export class MongoStorage implements IStorage {
         gender: "Female",
         language: ["Hindi", "English", "Tamil"],
         location: "Mumbai",
+        priceRange: "Premium",
         eventTypes: ["Wedding", "Concert", "Corporate"],
         isFeatured: true,
       },
@@ -277,6 +340,12 @@ export class MongoStorage implements IStorage {
         category: "Actors",
         image: "/attached_assets/generated_images/Professional_male_actor_headshot_a0a56235.png",
         bio: "Acclaimed Bollywood actor with a career spanning two decades. Known for his intense performances and versatility, he has won hearts with his powerful portrayals in both commercial and independent cinema.",
+        achievements: [
+          "2 National Film Awards",
+          "5 Filmfare Awards for Best Actor",
+          "Padma Shri Recipient",
+          "Over 75 films across multiple languages"
+        ],
         socialLinks: [
           "https://instagram.com/rajeshkumar",
           "https://twitter.com/rajeshkumar",
@@ -286,6 +355,7 @@ export class MongoStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Mumbai",
+        priceRange: "Premium",
         eventTypes: ["Corporate", "Private Party"],
         isFeatured: true,
       },
@@ -295,6 +365,12 @@ export class MongoStorage implements IStorage {
         category: "Comedians",
         image: "/attached_assets/generated_images/Comedian_performing_on_stage_864e615e.png",
         bio: "Stand-up comedian extraordinaire who brings the house down with his observational humor and witty takes on everyday life. His unique style and relatable content have made him a favorite across India.",
+        achievements: [
+          "5 Million+ YouTube subscribers",
+          "Amazon Prime Special 'Laugh Out Loud'",
+          "Toured 50+ cities worldwide",
+          "Comedy Central India Star Performer"
+        ],
         socialLinks: [
           "https://instagram.com/amittandon",
           "https://youtube.com/amittandon",
@@ -304,6 +380,7 @@ export class MongoStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Delhi",
+        priceRange: "Mid-Range",
         eventTypes: ["Corporate", "Private Party", "Wedding"],
         isFeatured: false,
       },
@@ -313,6 +390,12 @@ export class MongoStorage implements IStorage {
         category: "Influencers",
         image: "/attached_assets/generated_images/Modern_social_media_influencer_37f081d2.png",
         bio: "Digital content creator and lifestyle influencer with a massive following. Known for her authentic content on fashion, travel, and lifestyle, she has collaborated with top brands and inspired millions.",
+        achievements: [
+          "10 Million+ Instagram followers",
+          "Featured in Forbes 30 Under 30",
+          "Brand partnerships with 100+ companies",
+          "Travel & Lifestyle Blog of the Year"
+        ],
         socialLinks: [
           "https://instagram.com/nehapatel",
           "https://youtube.com/nehapatel",
@@ -322,6 +405,7 @@ export class MongoStorage implements IStorage {
         gender: "Female",
         language: ["Hindi", "English", "Gujarati"],
         location: "Bangalore",
+        priceRange: "Mid-Range",
         eventTypes: ["Corporate", "Private Party"],
         isFeatured: true,
       },
@@ -331,6 +415,12 @@ export class MongoStorage implements IStorage {
         category: "Choreographers",
         image: "/attached_assets/generated_images/Professional_choreographer_dancing_36eaf6d7.png",
         bio: "Celebrity choreographer who has redefined dance in Indian cinema. His innovative choreography and unique style have made him the go-to choice for Bollywood's biggest productions.",
+        achievements: [
+          "Choreographed 200+ films",
+          "3 National Film Awards",
+          "International Dance Award Winner",
+          "Mentored 1000+ aspiring dancers"
+        ],
         socialLinks: [
           "https://instagram.com/vikramsingh",
           "https://youtube.com/vikramsingh",
@@ -340,6 +430,7 @@ export class MongoStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English", "Punjabi"],
         location: "Mumbai",
+        priceRange: "Premium",
         eventTypes: ["Wedding", "Corporate", "Concert"],
         isFeatured: false,
       },
@@ -349,6 +440,12 @@ export class MongoStorage implements IStorage {
         category: "Chefs",
         image: "/attached_assets/generated_images/Celebrity_chef_professional_portrait_882fe472.png",
         bio: "Celebrity chef and culinary innovator who brings traditional Indian flavors to modern cuisine. Her restaurants have won multiple Michelin stars and she's a beloved TV personality.",
+        achievements: [
+          "2 Michelin Star Restaurants",
+          "MasterChef India Judge",
+          "Author of 5 bestselling cookbooks",
+          "Times Food Awards - Chef of the Year"
+        ],
         socialLinks: [
           "https://instagram.com/chefritu",
           "https://youtube.com/chefritu",
@@ -358,6 +455,7 @@ export class MongoStorage implements IStorage {
         gender: "Female",
         language: ["Hindi", "English"],
         location: "Delhi",
+        priceRange: "Premium",
         eventTypes: ["Corporate", "Private Party"],
         isFeatured: false,
       },
@@ -367,6 +465,12 @@ export class MongoStorage implements IStorage {
         category: "Motivational Speakers",
         image: "/attached_assets/generated_images/Motivational_speaker_on_stage_6391bb2e.png",
         bio: "Renowned motivational speaker and life coach who has transformed millions of lives with his powerful messages. His talks on leadership, success, and personal growth are legendary.",
+        achievements: [
+          "Addressed 2000+ corporate events",
+          "Bestselling author of 8 books",
+          "TEDx Speaker with 20M+ views",
+          "Awarded India's Top Motivational Speaker"
+        ],
         socialLinks: [
           "https://instagram.com/drarunsharma",
           "https://youtube.com/drarunsharma",
@@ -376,6 +480,7 @@ export class MongoStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Hyderabad",
+        priceRange: "Premium",
         eventTypes: ["Corporate"],
         isFeatured: true,
       },
@@ -385,6 +490,12 @@ export class MongoStorage implements IStorage {
         category: "Singers",
         image: "/attached_assets/generated_images/Young_male_musician_portrait_655aec8f.png",
         bio: "Young and talented singer-songwriter who has taken the indie music scene by storm. His soulful voice and original compositions have earned him a dedicated fanbase.",
+        achievements: [
+          "MTV Unplugged Season Winner",
+          "3 Million+ Spotify monthly listeners",
+          "Performed at Sunburn Festival",
+          "YouTube Silver Play Button"
+        ],
         socialLinks: [
           "https://instagram.com/arjunmehta",
           "https://youtube.com/arjunmehta",
@@ -394,6 +505,7 @@ export class MongoStorage implements IStorage {
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Bangalore",
+        priceRange: "Budget",
         eventTypes: ["Wedding", "Concert", "Private Party"],
         isFeatured: false,
       },

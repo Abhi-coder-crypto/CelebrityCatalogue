@@ -20,7 +20,6 @@ export default function Home() {
   const [selectedGender, setSelectedGender] = useState("all");
   const [selectedLanguage, setSelectedLanguage] = useState("all");
   const [selectedLocation, setSelectedLocation] = useState("all");
-  const [selectedPriceRange, setSelectedPriceRange] = useState("all");
   const [selectedEventType, setSelectedEventType] = useState("all");
   const [favorites, setFavorites] = useState<string[]>([]);
   const [isFavoritesSidebarOpen, setIsFavoritesSidebarOpen] = useState(false);
@@ -40,14 +39,13 @@ export default function Home() {
       const matchesGender = selectedGender === "all" || celebrity.gender === selectedGender;
       const matchesLanguage = selectedLanguage === "all" || celebrity.language.includes(selectedLanguage);
       const matchesLocation = selectedLocation === "all" || celebrity.location === selectedLocation;
-      const matchesPriceRange = selectedPriceRange === "all" || celebrity.priceRange === selectedPriceRange;
       const matchesEventType = selectedEventType === "all" || celebrity.eventTypes.includes(selectedEventType);
 
       return matchesSearch && matchesCategory && matchesGender && matchesLanguage && 
-             matchesLocation && matchesPriceRange && matchesEventType;
+             matchesLocation && matchesEventType;
     });
   }, [celebrities, searchQuery, selectedCategory, selectedGender, selectedLanguage, 
-      selectedLocation, selectedPriceRange, selectedEventType]);
+      selectedLocation, selectedEventType]);
 
   const celebrityCounts = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -78,7 +76,6 @@ export default function Home() {
     setSelectedGender("all");
     setSelectedLanguage("all");
     setSelectedLocation("all");
-    setSelectedPriceRange("all");
     setSelectedEventType("all");
   };
 
@@ -124,8 +121,6 @@ export default function Home() {
             onLanguageChange={setSelectedLanguage}
             selectedLocation={selectedLocation}
             onLocationChange={setSelectedLocation}
-            selectedPriceRange={selectedPriceRange}
-            onPriceRangeChange={setSelectedPriceRange}
             selectedEventType={selectedEventType}
             onEventTypeChange={setSelectedEventType}
             onClearFilters={handleClearFilters}

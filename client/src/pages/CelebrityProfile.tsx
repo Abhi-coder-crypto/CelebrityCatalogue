@@ -137,18 +137,6 @@ export default function CelebrityProfile() {
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-profile-bio">{celebrity.bio}</p>
                 </div>
 
-                <div>
-                  <h3 className="font-accent text-xl font-semibold mb-3" data-testid="text-achievements-title">Achievements</h3>
-                  <ul className="space-y-2">
-                    {celebrity.achievements.map((achievement, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-muted-foreground">
-                        <Star className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
                 {celebrity.videoUrl && (
                   <div>
                     <h3 className="font-accent text-xl font-semibold mb-3">Showreel</h3>
@@ -205,10 +193,6 @@ export default function CelebrityProfile() {
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Location</span>
                     <span className="font-medium">{celebrity.location}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Price Range</span>
-                    <span className="font-medium">{celebrity.priceRange}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Gender</span>

@@ -21,8 +21,6 @@ interface FilterBarProps {
   onLanguageChange: (value: string) => void;
   selectedLocation: string;
   onLocationChange: (value: string) => void;
-  selectedPriceRange: string;
-  onPriceRangeChange: (value: string) => void;
   selectedEventType: string;
   onEventTypeChange: (value: string) => void;
   onClearFilters: () => void;
@@ -39,15 +37,13 @@ export function FilterBar({
   onLanguageChange,
   selectedLocation,
   onLocationChange,
-  selectedPriceRange,
-  onPriceRangeChange,
   selectedEventType,
   onEventTypeChange,
   onClearFilters,
 }: FilterBarProps) {
   const hasActiveFilters = selectedCategory !== "all" || selectedGender !== "all" || 
                           selectedLanguage !== "all" || selectedLocation !== "all" || 
-                          selectedPriceRange !== "all" || selectedEventType !== "all";
+                          selectedEventType !== "all";
 
   return (
     <div className="sticky top-0 z-40 glassmorphic border-b border-white/10 py-4 px-6 md:px-8">
@@ -120,18 +116,6 @@ export function FilterBar({
                   <SelectItem value="Hyderabad">Hyderabad</SelectItem>
                   <SelectItem value="Chennai">Chennai</SelectItem>
                   <SelectItem value="Kolkata">Kolkata</SelectItem>
-                </SelectContent>
-              </Select>
-
-              <Select value={selectedPriceRange} onValueChange={onPriceRangeChange}>
-                <SelectTrigger className="glassmorphic border-white/10 h-10 min-w-[130px]" data-testid="select-price">
-                  <SelectValue placeholder="Price Range" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Prices</SelectItem>
-                  <SelectItem value="Budget">Budget (₹50K-2L)</SelectItem>
-                  <SelectItem value="Mid-Range">Mid-Range (₹2L-10L)</SelectItem>
-                  <SelectItem value="Premium">Premium (₹10L+)</SelectItem>
                 </SelectContent>
               </Select>
 
