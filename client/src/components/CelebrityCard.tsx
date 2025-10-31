@@ -4,6 +4,7 @@ import { Heart, MapPin, Eye } from "lucide-react";
 import { SiInstagram, SiYoutube, SiX } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Mic2, Film, Laugh, Smartphone, Music2, ChefHat, Presentation } from "lucide-react";
 import type { Celebrity } from "@shared/schema";
 
 interface CelebrityCardProps {
@@ -12,12 +13,24 @@ interface CelebrityCardProps {
   isFavorite: boolean;
 }
 
+const categoryBackgrounds = {
+  "Singers": "bg-gradient-to-br from-purple-600/30 to-pink-600/30",
+  "Actors": "bg-gradient-to-br from-blue-600/30 to-cyan-600/30",
+  "Comedians": "bg-gradient-to-br from-yellow-600/30 to-orange-600/30",
+  "Influencers": "bg-gradient-to-br from-green-600/30 to-emerald-600/30",
+  "Choreographers": "bg-gradient-to-br from-red-600/30 to-rose-600/30",
+  "Chefs": "bg-gradient-to-br from-orange-600/30 to-amber-600/30",
+  "Motivational Speakers": "bg-gradient-to-br from-indigo-600/30 to-violet-600/30",
+};
+
 export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: CelebrityCardProps) {
   const [, setLocation] = useLocation();
 
   const handleCardClick = () => {
     setLocation(`/celebrity/${celebrity.slug}`);
   };
+
+  const categoryBg = categoryBackgrounds[celebrity.category as keyof typeof categoryBackgrounds] || "bg-gradient-to-br from-gray-600/30 to-slate-600/30";
 
   return (
     <motion.div
@@ -30,12 +43,13 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
       onClick={handleCardClick}
     >
       <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+          <div className={`absolute inset-0 ${categoryBg}`} />
           <img 
             src={celebrity.image} 
             alt={celebrity.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
           {celebrity.isFeatured && (
             <Badge 

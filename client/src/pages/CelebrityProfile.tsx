@@ -72,7 +72,7 @@ export default function CelebrityProfile() {
           <Link href="/">
             <Button 
               variant="outline" 
-              className="glassmorphic border-white/20 text-white hover:bg-white/10"
+              className="bg-black/60 backdrop-blur-md border-white/30 text-white hover:bg-black/80 shadow-lg"
               data-testid="button-back"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -181,7 +181,7 @@ export default function CelebrityProfile() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="glassmorphic p-6 rounded-2xl sticky top-24 space-y-6"
+              className="glassmorphic p-6 rounded-2xl lg:sticky lg:top-24 space-y-6"
             >
               <div>
                 <h3 className="font-accent text-lg font-semibold mb-4" data-testid="text-quick-info-title">Quick Info</h3>
@@ -226,7 +226,7 @@ export default function CelebrityProfile() {
 
               <Button
                 onClick={() => setIsEnquireModalOpen(true)}
-                className="w-full bg-primary hover:bg-primary border border-primary-border h-12 text-base font-semibold"
+                className="w-full bg-primary hover:bg-primary/90 border border-primary-border h-12 text-base font-semibold shadow-lg"
                 data-testid="button-enquire-now"
               >
                 Enquire Now
