@@ -22,6 +22,7 @@ const celebritySchema = new Schema<CelebrityDocument>({
   eventTypes: { type: [String], required: true },
   isFeatured: { type: Boolean, default: false },
   views: { type: Number, default: 0 },
+  likes: { type: Number, default: 0 },
 }, {
   timestamps: false,
   toJSON: {

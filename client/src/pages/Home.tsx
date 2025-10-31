@@ -12,6 +12,7 @@ import { FavoritesSidebar } from "@/components/FavoritesSidebar";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import type { Celebrity } from "@shared/schema";
+import { apiRequest, queryClient } from "@/lib/queryClient";
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -57,10 +58,26 @@ export default function Home() {
 
   const favoriteCelebrities = celebrities.filter((c) => favorites.includes(c.id));
 
-  const handleToggleFavorite = (id: string) => {
+  const handleToggleFavorite = async (id: string) => {
+    const isCurrentlyFavorited = favorites.includes(id);
+    
     setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((fav) => fav !== id) : [...prev, id]
+      isCurrentlyFavorited ? prev.filter((fav) => fav !== id) : [...prev, id]
     );
+    
+    try {
+      if (isCurrentlyFavorited) {
+        await apiRequest("POST", `/api/celebrities/${id}/unlike`, {});
+      } else {
+        await apiRequest("POST", `/api/celebrities/${id}/like`, {});
+      }
+      queryClient.invalidateQueries({ queryKey: ["/api/celebrities"] });
+    } catch (error) {
+      console.error("Failed to update like status:", error);
+      setFavorites((prev) =>
+        isCurrentlyFavorited ? [...prev, id] : prev.filter((fav) => fav !== id)
+      );
+    }
   };
 
   const handleSearch = (query: string) => {

@@ -17,6 +17,7 @@ export const celebrities = pgTable("celebrities", {
   eventTypes: text("event_types").array().notNull(),
   isFeatured: boolean("is_featured").notNull().default(false),
   views: integer("views").notNull().default(0),
+  likes: integer("likes").notNull().default(0),
 });
 
 export const enquiries = pgTable("enquiries", {
@@ -33,6 +34,7 @@ export const enquiries = pgTable("enquiries", {
 export const insertCelebritySchema = createInsertSchema(celebrities).omit({
   id: true,
   views: true,
+  likes: true,
 });
 
 export const insertEnquirySchema = createInsertSchema(enquiries).omit({

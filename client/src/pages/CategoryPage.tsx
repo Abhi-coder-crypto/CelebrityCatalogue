@@ -13,6 +13,7 @@ import { FavoritesSidebar } from "@/components/FavoritesSidebar";
 import type { Celebrity } from "@shared/schema";
 import { categories } from "@shared/schema";
 import { categoryBackgrounds } from "@shared/categoryAssets";
+import { apiRequest, queryClient } from "@/lib/queryClient";
 
 export default function CategoryPage() {
   const [, params] = useRoute("/category/:slug");
@@ -51,10 +52,26 @@ export default function CategoryPage() {
 
   const favoriteCelebrities = celebrities.filter((c) => favorites.includes(c.id));
 
-  const handleToggleFavorite = (id: string) => {
+  const handleToggleFavorite = async (id: string) => {
+    const isCurrentlyFavorited = favorites.includes(id);
+    
     setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((fav) => fav !== id) : [...prev, id]
+      isCurrentlyFavorited ? prev.filter((fav) => fav !== id) : [...prev, id]
     );
+    
+    try {
+      if (isCurrentlyFavorited) {
+        await apiRequest("POST", `/api/celebrities/${id}/unlike`, {});
+      } else {
+        await apiRequest("POST", `/api/celebrities/${id}/like`, {});
+      }
+      queryClient.invalidateQueries({ queryKey: ["/api/celebrities"] });
+    } catch (error) {
+      console.error("Failed to update like status:", error);
+      setFavorites((prev) =>
+        isCurrentlyFavorited ? [...prev, id] : prev.filter((fav) => fav !== id)
+      );
+    }
   };
 
   const handleClearFilters = () => {

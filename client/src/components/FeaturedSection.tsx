@@ -10,7 +10,9 @@ interface FeaturedSectionProps {
 }
 
 export function FeaturedSection({ celebrities, onToggleFavorite, favorites }: FeaturedSectionProps) {
-  const featured = celebrities.filter(c => c.isFeatured).slice(0, 3);
+  const featured = [...celebrities]
+    .sort((a, b) => b.likes - a.likes)
+    .slice(0, 3);
   const trending = [...celebrities]
     .sort((a, b) => b.views - a.views)
     .slice(0, 3);

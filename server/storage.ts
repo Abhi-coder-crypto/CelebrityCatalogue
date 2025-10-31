@@ -11,6 +11,8 @@ export interface IStorage {
   getCelebritiesByCategory(category: string): Promise<Celebrity[]>;
   createCelebrity(celebrity: InsertCelebrity): Promise<Celebrity>;
   incrementCelebrityViews(id: string): Promise<void>;
+  incrementCelebrityLikes(id: string): Promise<void>;
+  decrementCelebrityLikes(id: string): Promise<void>;
   
   // Enquiry operations
   createEnquiry(enquiry: InsertEnquiry): Promise<Enquiry>;
@@ -28,7 +30,7 @@ export class MemStorage implements IStorage {
   }
 
   private seedData() {
-    const sampleCelebrities: Omit<Celebrity, 'id' | 'views'>[] = [
+    const sampleCelebrities: Omit<Celebrity, 'id' | 'views' | 'likes'>[] = [
       {
         name: "Priya Sharma",
         slug: "priya-sharma",
@@ -173,6 +175,7 @@ export class MemStorage implements IStorage {
         ...celeb,
         id,
         views: Math.floor(Math.random() * 1000),
+        likes: Math.floor(Math.random() * 500),
       });
     });
   }
@@ -199,6 +202,7 @@ export class MemStorage implements IStorage {
       ...insertCelebrity, 
       id, 
       views: 0,
+      likes: 0,
       isFeatured: insertCelebrity.isFeatured ?? false
     };
     this.celebrities.set(id, celebrity);
@@ -209,6 +213,22 @@ export class MemStorage implements IStorage {
     const celebrity = this.celebrities.get(id);
     if (celebrity) {
       celebrity.views += 1;
+      this.celebrities.set(id, celebrity);
+    }
+  }
+
+  async incrementCelebrityLikes(id: string): Promise<void> {
+    const celebrity = this.celebrities.get(id);
+    if (celebrity) {
+      celebrity.likes += 1;
+      this.celebrities.set(id, celebrity);
+    }
+  }
+
+  async decrementCelebrityLikes(id: string): Promise<void> {
+    const celebrity = this.celebrities.get(id);
+    if (celebrity && celebrity.likes > 0) {
+      celebrity.likes -= 1;
       this.celebrities.set(id, celebrity);
     }
   }
@@ -392,6 +412,7 @@ export class MongoStorage implements IStorage {
       sampleCelebrities.map(celeb => ({
         ...celeb,
         views: Math.floor(Math.random() * 1000),
+        likes: Math.floor(Math.random() * 500),
       }))
     );
 
@@ -441,6 +462,7 @@ export class MongoStorage implements IStorage {
     const celebrity = await CelebrityModel.create({
       ...insertCelebrity,
       views: 0,
+      likes: 0,
     });
     return celebrity.toJSON() as Celebrity;
   }
@@ -448,6 +470,19 @@ export class MongoStorage implements IStorage {
   async incrementCelebrityViews(id: string): Promise<void> {
     await this.initialize();
     await CelebrityModel.findByIdAndUpdate(id, { $inc: { views: 1 } });
+  }
+
+  async incrementCelebrityLikes(id: string): Promise<void> {
+    await this.initialize();
+    await CelebrityModel.findByIdAndUpdate(id, { $inc: { likes: 1 } });
+  }
+
+  async decrementCelebrityLikes(id: string): Promise<void> {
+    await this.initialize();
+    await CelebrityModel.findByIdAndUpdate(
+      { _id: id, likes: { $gt: 0 } },
+      { $inc: { likes: -1 } }
+    );
   }
 
   async createEnquiry(insertEnquiry: InsertEnquiry): Promise<Enquiry> {

@@ -40,6 +40,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Like celebrity (increment likes)
+  app.post("/api/celebrities/:id/like", async (req, res) => {
+    try {
+      await storage.incrementCelebrityLikes(req.params.id);
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to like celebrity" });
+    }
+  });
+
+  // Unlike celebrity (decrement likes)
+  app.post("/api/celebrities/:id/unlike", async (req, res) => {
+    try {
+      await storage.decrementCelebrityLikes(req.params.id);
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to unlike celebrity" });
+    }
+  });
+
   // Create enquiry
   app.post("/api/enquiries", async (req, res) => {
     try {
