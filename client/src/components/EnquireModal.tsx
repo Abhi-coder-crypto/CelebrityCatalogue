@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { X } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { X, Send } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -64,16 +63,9 @@ export function EnquireModal({ isOpen, onClose, celebrityId, celebrityName }: En
         celebrityName,
       });
 
-      const whatsappMessage = encodeURIComponent(
-        `New Enquiry Alert!\n\nCelebrity: ${celebrityName}\nName: ${data.userName}\nContact: ${data.contact}\nEmail: ${data.email}\nMessage: ${data.purpose}`
-      );
-      
-      const whatsappNumber = "919876543210";
-      window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
-
       toast({
-        title: "Enquiry Submitted!",
-        description: "Redirecting you to WhatsApp to complete your enquiry.",
+        title: "Enquiry Submitted Successfully!",
+        description: "We've received your enquiry and will get back to you soon.",
       });
 
       form.reset();
@@ -206,7 +198,7 @@ export function EnquireModal({ isOpen, onClose, celebrityId, celebrityName }: En
                   "Submitting..."
                 ) : (
                   <>
-                    <SiWhatsapp className="w-4 h-4 mr-2" />
+                    <Send className="w-4 h-4 mr-2" />
                     Submit Enquiry
                   </>
                 )}
