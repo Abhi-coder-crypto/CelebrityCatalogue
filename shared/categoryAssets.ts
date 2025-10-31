@@ -26,21 +26,21 @@ export const categoryColors: Record<Category, string> = {
 export const categoryCardBackgrounds: Record<Category, string> = {
   "Singers": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop",
   "Actors": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=400&fit=crop",
-  "Actresses": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop",
+  "Actresses": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&h=400&fit=crop",
   "Comedians": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=400&h=400&fit=crop",
-  "Influencers": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=400&fit=crop",
+  "Influencers": "https://images.unsplash.com/photo-1493612276216-ee3925520721?w=400&h=400&fit=crop",
   "Choreographers": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&h=400&fit=crop",
-  "Chefs": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&h=400&fit=crop",
-  "Motivational Speakers": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=400&fit=crop",
+  "Chefs": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=400&fit=crop",
+  "Motivational Speakers": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=400&fit=crop",
 };
 
 export const categoryBackgrounds: Record<Category, string> = {
   "Singers": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1920&h=600&fit=crop",
   "Actors": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1920&h=600&fit=crop",
-  "Actresses": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&h=600&fit=crop",
+  "Actresses": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=1920&h=600&fit=crop",
   "Comedians": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=1920&h=600&fit=crop",
-  "Influencers": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1920&h=600&fit=crop",
+  "Influencers": "https://images.unsplash.com/photo-1493612276216-ee3925520721?w=1920&h=600&fit=crop",
   "Choreographers": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=1920&h=600&fit=crop",
-  "Chefs": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=1920&h=600&fit=crop",
-  "Motivational Speakers": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1920&h=600&fit=crop",
+  "Chefs": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1920&h=600&fit=crop",
+  "Motivational Speakers": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&h=600&fit=crop",
 };
