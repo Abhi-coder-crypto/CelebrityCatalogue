@@ -83,11 +83,10 @@ export function CategoryGrid({ celebrityCounts = {} }: CategoryGridProps) {
                     <img 
                       src={backgroundImage}
                       alt={category}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${gradient} group-hover:opacity-50 transition-opacity`} />
-                    <div className="glassmorphic absolute inset-0" />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-60 group-hover:opacity-40 transition-opacity`} />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                     
                     <div className="relative h-full flex flex-col items-center justify-center text-center">
                       <div className="w-16 h-16 rounded-2xl bg-primary/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
