@@ -71,7 +71,7 @@ export default function CelebrityProfile() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         
-        <div className="absolute top-24 left-6 md:left-8">
+        <div className="absolute top-4 left-4 md:top-24 md:left-8">
           <Link href="/">
             <Button 
               variant="outline" 
@@ -85,7 +85,7 @@ export default function CelebrityProfile() {
         </div>
 
         {celebrity.isFeatured && (
-          <Badge className="absolute top-24 right-6 md:right-8 bg-primary/90 backdrop-blur-sm border-primary-border">
+          <Badge className="absolute top-4 right-4 md:top-24 md:right-8 bg-primary/90 backdrop-blur-sm border-primary-border">
             <Star className="w-3 h-3 mr-1 fill-current" />
             Featured
           </Badge>
