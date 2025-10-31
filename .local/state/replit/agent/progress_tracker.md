@@ -29,3 +29,4 @@
 [x] 29. FIXED scroll to top on page navigation - added useEffect with window.scrollTo in CategoryPage and CelebrityProfile so users are taken to top of page instead of footer when clicking categories or celebrities
 [x] 30. FIXED category card text cutting off in mobile - reduced padding from p-8 to p-4 on mobile (p-4 md:p-8) so category names are fully visible and not shifted too far right
 [x] 31. CHANGED Motivational Speakers category background image - replaced with stock image of motivational speaker on stage inspiring audience, more relevant and professional
+[x] 32. FIXED category text cutting in mobile and Motivational Speakers image - reduced font size from text-xl to text-base on mobile, added leading-tight, changed to proper Unsplash URL instead of local path so image loads correctly

@@ -60,10 +60,10 @@ export function CategoryGrid({ celebrityCounts = {} }: CategoryGridProps) {
                         <Icon className="w-7 h-7 text-primary" />
                       </div>
                       <div className="mt-auto">
-                        <h3 className="font-accent text-xl md:text-2xl font-semibold mb-2" data-testid={`text-category-name-${category.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <h3 className="font-accent text-base md:text-2xl font-semibold mb-1 md:mb-2 leading-tight" data-testid={`text-category-name-${category.toLowerCase().replace(/\s+/g, '-')}`}>
                           {category}
                         </h3>
-                        <p className="text-muted-foreground text-sm" data-testid={`text-category-count-${category.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <p className="text-muted-foreground text-xs md:text-sm" data-testid={`text-category-count-${category.toLowerCase().replace(/\s+/g, '-')}`}>
                           {count} {count === 1 ? 'Celebrity' : 'Celebrities'}
                         </p>
                       </div>

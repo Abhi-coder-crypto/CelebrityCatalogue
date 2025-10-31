@@ -31,7 +31,7 @@ export const categoryCardBackgrounds: Record<Category, string> = {
   "Influencers": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=400&fit=crop",
   "Choreographers": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&h=400&fit=crop",
   "Chefs": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=400&h=400&fit=crop",
-  "Motivational Speakers": "/attached_assets/stock_images/motivational_speaker_ca624730.jpg",
+  "Motivational Speakers": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=400&fit=crop",
 };
 
 export const categoryBackgrounds: Record<Category, string> = {
@@ -42,5 +42,5 @@ export const categoryBackgrounds: Record<Category, string> = {
   "Influencers": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&h=600&fit=crop",
   "Choreographers": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=1920&h=600&fit=crop",
   "Chefs": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1920&h=600&fit=crop",
-  "Motivational Speakers": "/attached_assets/stock_images/motivational_speaker_ca624730.jpg",
+  "Motivational Speakers": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1920&h=600&fit=crop",
 };
