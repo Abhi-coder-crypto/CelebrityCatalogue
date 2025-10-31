@@ -55,16 +55,18 @@ export function CategoryGrid({ celebrityCounts = {} }: CategoryGridProps) {
                     <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-60 group-hover:opacity-40 transition-opacity`} />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                     
-                    <div className="relative h-full flex flex-col items-center justify-center text-center">
-                      <div className="w-16 h-16 rounded-2xl bg-primary/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <Icon className="w-8 h-8 text-primary" />
+                    <div className="relative h-full flex flex-col">
+                      <div className="w-14 h-14 rounded-xl bg-primary/20 backdrop-blur-sm flex items-center justify-center mb-auto group-hover:scale-110 transition-transform">
+                        <Icon className="w-7 h-7 text-primary" />
                       </div>
-                      <h3 className="font-accent text-xl md:text-2xl font-semibold mb-2" data-testid={`text-category-name-${category.toLowerCase().replace(/\s+/g, '-')}`}>
-                        {category}
-                      </h3>
-                      <p className="text-muted-foreground text-sm" data-testid={`text-category-count-${category.toLowerCase().replace(/\s+/g, '-')}`}>
-                        {count} {count === 1 ? 'Celebrity' : 'Celebrities'}
-                      </p>
+                      <div className="mt-auto">
+                        <h3 className="font-accent text-xl md:text-2xl font-semibold mb-2" data-testid={`text-category-name-${category.toLowerCase().replace(/\s+/g, '-')}`}>
+                          {category}
+                        </h3>
+                        <p className="text-muted-foreground text-sm" data-testid={`text-category-count-${category.toLowerCase().replace(/\s+/g, '-')}`}>
+                          {count} {count === 1 ? 'Celebrity' : 'Celebrities'}
+                        </p>
+                      </div>
                     </div>
 
                     <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
