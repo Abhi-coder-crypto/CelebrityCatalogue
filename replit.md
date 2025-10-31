@@ -56,11 +56,11 @@ Preferred communication style: Simple, everyday language.
 - Drizzle ORM configured for PostgreSQL migration path
 - Schema definitions shared between client and server via `/shared/schema.ts`
 
-**Database Schema (Prepared for PostgreSQL)**
-- `celebrities` table: stores celebrity profiles with metadata, social links, pricing, and view counts
-- `enquiries` table: stores user enquiry submissions with celebrity references
-- UUID primary keys using PostgreSQL's `gen_random_uuid()`
-- Array columns for multi-value fields (achievements, languages, event types)
+**Database Schema (MongoDB)**
+- `celebrities` collection: stores celebrity profiles with metadata, social links, and view counts
+- `enquiries` collection: stores user enquiry submissions with celebrity references
+- MongoDB ObjectID for document identification
+- Array fields for multi-value fields (languages, event types, social links)
 
 ### API Structure
 

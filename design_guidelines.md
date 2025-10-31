@@ -76,15 +76,15 @@
 ### Individual Profile Page Layout
 - Hero banner: Full-width image/video (h-96 md:h-[600px])
 - Two-column layout below hero:
-  - Left (2/3): Bio, achievements, work highlights, embedded showreel video
+  - Left (2/3): Bio, work highlights, embedded showreel video
   - Right (1/3): Sticky sidebar with quick info, social links, "Enquire Now" CTA
-- Tabbed interface for: About, Achievements, Gallery, Reviews (future)
+- Tabbed interface for: About, Gallery, Reviews (future)
 - Breadcrumb navigation at top
 
 ### Search & Filter System
 - Sticky filter bar below hero
 - Search input with icon (Heroicons magnifying glass)
-- Filter dropdowns: Category, Event Type, Location, Price Range, Language, Gender
+- Filter dropdowns: Category, Event Type, Location, Language, Gender
 - Active filters displayed as removable chips
 - Results count display
 - Sort options: Popularity, Trending, A-Z

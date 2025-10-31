@@ -28,7 +28,7 @@ export class MemStorage implements IStorage {
   }
 
   private seedData() {
-    const sampleCelebrities: InsertCelebrity[] = [
+    const sampleCelebrities: Omit<Celebrity, 'id' | 'views'>[] = [
       {
         name: "Priya Sharma",
         slug: "priya-sharma",
@@ -58,7 +58,7 @@ export class MemStorage implements IStorage {
           "https://twitter.com/rajeshkumar",
           "https://facebook.com/rajeshkumar"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Mumbai",
@@ -76,7 +76,7 @@ export class MemStorage implements IStorage {
           "https://youtube.com/amittandon",
           "https://twitter.com/amittandon"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Delhi",
@@ -94,7 +94,7 @@ export class MemStorage implements IStorage {
           "https://youtube.com/nehapatel",
           "https://twitter.com/nehapatel"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Female",
         language: ["Hindi", "English", "Gujarati"],
         location: "Bangalore",
@@ -112,7 +112,7 @@ export class MemStorage implements IStorage {
           "https://youtube.com/vikramsingh",
           "https://facebook.com/vikramsingh"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English", "Punjabi"],
         location: "Mumbai",
@@ -130,7 +130,7 @@ export class MemStorage implements IStorage {
           "https://youtube.com/chefritu",
           "https://twitter.com/chefritu"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Female",
         language: ["Hindi", "English"],
         location: "Delhi",
@@ -148,7 +148,7 @@ export class MemStorage implements IStorage {
           "https://youtube.com/drarunsharma",
           "https://twitter.com/drarunsharma"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Hyderabad",
@@ -166,7 +166,7 @@ export class MemStorage implements IStorage {
           "https://youtube.com/arjunmehta",
           "https://twitter.com/arjunmehta"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Bangalore",
@@ -203,7 +203,13 @@ export class MemStorage implements IStorage {
 
   async createCelebrity(insertCelebrity: InsertCelebrity): Promise<Celebrity> {
     const id = randomUUID();
-    const celebrity: Celebrity = { ...insertCelebrity, id, views: 0 };
+    const celebrity: Celebrity = { 
+      ...insertCelebrity, 
+      id, 
+      views: 0,
+      videoUrl: insertCelebrity.videoUrl ?? null,
+      isFeatured: insertCelebrity.isFeatured ?? false
+    };
     this.celebrities.set(id, celebrity);
     return celebrity;
   }
@@ -282,7 +288,7 @@ export class MongoStorage implements IStorage {
           "https://twitter.com/rajeshkumar",
           "https://facebook.com/rajeshkumar"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Mumbai",
@@ -300,7 +306,7 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/amittandon",
           "https://twitter.com/amittandon"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Delhi",
@@ -318,7 +324,7 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/nehapatel",
           "https://twitter.com/nehapatel"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Female",
         language: ["Hindi", "English", "Gujarati"],
         location: "Bangalore",
@@ -336,7 +342,7 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/vikramsingh",
           "https://facebook.com/vikramsingh"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English", "Punjabi"],
         location: "Mumbai",
@@ -354,7 +360,7 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/chefritu",
           "https://twitter.com/chefritu"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Female",
         language: ["Hindi", "English"],
         location: "Delhi",
@@ -372,7 +378,7 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/drarunsharma",
           "https://twitter.com/drarunsharma"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Hyderabad",
@@ -390,7 +396,7 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/arjunmehta",
           "https://twitter.com/arjunmehta"
         ],
-        videoUrl: "",
+        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Bangalore",
