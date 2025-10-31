@@ -32,7 +32,7 @@ export function Navigation() {
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-chart-5 flex items-center justify-center">
                   <span className="font-display text-white text-xl font-bold">CB</span>
                 </div>
-                <span className="font-display text-xl font-bold hidden sm:block">Celebs Booking</span>
+                <span className="font-display text-base sm:text-xl font-bold">Celebs Booking</span>
               </div>
             </Link>
 

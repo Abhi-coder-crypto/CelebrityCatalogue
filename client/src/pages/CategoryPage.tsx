@@ -12,6 +12,7 @@ import { FavoritesButton } from "@/components/FavoritesButton";
 import { FavoritesSidebar } from "@/components/FavoritesSidebar";
 import type { Celebrity } from "@shared/schema";
 import { categories } from "@shared/schema";
+import { categoryBackgrounds } from "@shared/categoryAssets";
 
 export default function CategoryPage() {
   const [, params] = useRoute("/category/:slug");
@@ -74,21 +75,35 @@ export default function CategoryPage() {
     setIsFavoritesSidebarOpen(false);
   };
 
+  const backgroundImage = categoryName && categoryBackgrounds[categoryName];
+  const displayTitle = categoryName || "Category Not Found";
+  const hasBackground = !!backgroundImage;
+
   return (
     <div className="min-h-screen">
       <Navigation />
 
-      <div className="pt-24 pb-12 px-6 md:px-8 bg-gradient-to-b from-card to-background">
-        <div className="max-w-7xl mx-auto">
+      <div className={`relative pt-24 pb-12 px-6 md:px-8 overflow-hidden ${!hasBackground ? 'bg-gradient-to-b from-card to-background' : ''}`}>
+        {hasBackground && (
+          <>
+            <img 
+              src={backgroundImage}
+              alt={categoryName}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-background" />
+          </>
+        )}
+        <div className="relative max-w-7xl mx-auto">
           <Link href="/">
-            <Button variant="ghost" className="mb-6" data-testid="button-back-home">
+            <Button variant="ghost" className={`mb-6 ${hasBackground ? 'hover:bg-white/10' : ''}`} data-testid="button-back-home">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
           </Link>
-          <h1 className="font-display text-4xl md:text-5xl font-bold mb-4" data-testid="text-category-page-title">{categoryName}</h1>
-          <p className="text-muted-foreground text-lg" data-testid="text-category-page-subtitle">
-            Discover talented {categoryName.toLowerCase()} for your next event
+          <h1 className={`font-display text-4xl md:text-5xl font-bold mb-4 ${hasBackground ? 'text-white' : ''}`} data-testid="text-category-page-title">{displayTitle}</h1>
+          <p className={`text-lg ${hasBackground ? 'text-white/90' : 'text-muted-foreground'}`} data-testid="text-category-page-subtitle">
+            {categoryName ? `Discover talented ${categoryName.toLowerCase()} for your next event` : 'Browse our categories to find the perfect celebrity for your event'}
           </p>
         </div>
       </div>
