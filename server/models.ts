@@ -16,7 +16,6 @@ const celebritySchema = new Schema<CelebrityDocument>({
   image: { type: String, required: true },
   bio: { type: String, required: true },
   socialLinks: { type: [String], required: true },
-  videoUrl: { type: String, default: "" },
   gender: { type: String, required: true },
   language: { type: [String], required: true },
   location: { type: String, required: true },

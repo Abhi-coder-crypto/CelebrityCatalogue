@@ -40,7 +40,6 @@ export class MemStorage implements IStorage {
           "https://youtube.com/priyasharma",
           "https://twitter.com/priyasharma"
         ],
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         gender: "Female",
         language: ["Hindi", "English", "Tamil"],
         location: "Mumbai",
@@ -58,7 +57,6 @@ export class MemStorage implements IStorage {
           "https://twitter.com/rajeshkumar",
           "https://facebook.com/rajeshkumar"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Mumbai",
@@ -76,7 +74,6 @@ export class MemStorage implements IStorage {
           "https://youtube.com/amittandon",
           "https://twitter.com/amittandon"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Delhi",
@@ -94,7 +91,6 @@ export class MemStorage implements IStorage {
           "https://youtube.com/nehapatel",
           "https://twitter.com/nehapatel"
         ],
-        videoUrl: null,
         gender: "Female",
         language: ["Hindi", "English", "Gujarati"],
         location: "Bangalore",
@@ -112,7 +108,6 @@ export class MemStorage implements IStorage {
           "https://youtube.com/vikramsingh",
           "https://facebook.com/vikramsingh"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English", "Punjabi"],
         location: "Mumbai",
@@ -130,7 +125,6 @@ export class MemStorage implements IStorage {
           "https://youtube.com/chefritu",
           "https://twitter.com/chefritu"
         ],
-        videoUrl: null,
         gender: "Female",
         language: ["Hindi", "English"],
         location: "Delhi",
@@ -148,7 +142,6 @@ export class MemStorage implements IStorage {
           "https://youtube.com/drarunsharma",
           "https://twitter.com/drarunsharma"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Hyderabad",
@@ -166,7 +159,6 @@ export class MemStorage implements IStorage {
           "https://youtube.com/arjunmehta",
           "https://twitter.com/arjunmehta"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Bangalore",
@@ -207,7 +199,6 @@ export class MemStorage implements IStorage {
       ...insertCelebrity, 
       id, 
       views: 0,
-      videoUrl: insertCelebrity.videoUrl ?? null,
       isFeatured: insertCelebrity.isFeatured ?? false
     };
     this.celebrities.set(id, celebrity);
@@ -270,7 +261,6 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/priyasharma",
           "https://twitter.com/priyasharma"
         ],
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         gender: "Female",
         language: ["Hindi", "English", "Tamil"],
         location: "Mumbai",
@@ -288,7 +278,6 @@ export class MongoStorage implements IStorage {
           "https://twitter.com/rajeshkumar",
           "https://facebook.com/rajeshkumar"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Mumbai",
@@ -306,7 +295,6 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/amittandon",
           "https://twitter.com/amittandon"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Delhi",
@@ -324,7 +312,6 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/nehapatel",
           "https://twitter.com/nehapatel"
         ],
-        videoUrl: null,
         gender: "Female",
         language: ["Hindi", "English", "Gujarati"],
         location: "Bangalore",
@@ -342,7 +329,6 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/vikramsingh",
           "https://facebook.com/vikramsingh"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English", "Punjabi"],
         location: "Mumbai",
@@ -360,7 +346,6 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/chefritu",
           "https://twitter.com/chefritu"
         ],
-        videoUrl: null,
         gender: "Female",
         language: ["Hindi", "English"],
         location: "Delhi",
@@ -378,7 +363,6 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/drarunsharma",
           "https://twitter.com/drarunsharma"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Hyderabad",
@@ -396,7 +380,6 @@ export class MongoStorage implements IStorage {
           "https://youtube.com/arjunmehta",
           "https://twitter.com/arjunmehta"
         ],
-        videoUrl: null,
         gender: "Male",
         language: ["Hindi", "English"],
         location: "Bangalore",

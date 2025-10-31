@@ -137,20 +137,6 @@ export default function CelebrityProfile() {
                   <p className="text-muted-foreground leading-relaxed" data-testid="text-profile-bio">{celebrity.bio}</p>
                 </div>
 
-                {celebrity.videoUrl && (
-                  <div>
-                    <h3 className="font-accent text-xl font-semibold mb-3">Showreel</h3>
-                    <div className="aspect-video rounded-xl overflow-hidden bg-muted">
-                      <iframe
-                        src={celebrity.videoUrl}
-                        className="w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                  </div>
-                )}
-
                 <div>
                   <h3 className="font-accent text-xl font-semibold mb-3">Event Types</h3>
                   <div className="flex flex-wrap gap-2">

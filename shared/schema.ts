@@ -11,7 +11,6 @@ export const celebrities = pgTable("celebrities", {
   image: text("image").notNull(),
   bio: text("bio").notNull(),
   socialLinks: text("social_links").array().notNull(),
-  videoUrl: text("video_url"),
   gender: text("gender").notNull(),
   language: text("language").array().notNull(),
   location: text("location").notNull(),
