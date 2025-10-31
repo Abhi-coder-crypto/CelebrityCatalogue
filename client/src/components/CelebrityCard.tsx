@@ -47,7 +47,7 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
           <img 
             src={celebrity.image} 
             alt={celebrity.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
@@ -73,25 +73,25 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
             <Heart className={`w-5 h-5 ${isFavorite ? 'fill-red-500 text-red-500' : ''}`} />
           </Button>
 
-          <div className="absolute bottom-0 left-0 right-0 p-2">
-            <div className="bg-black/70 backdrop-blur-md p-2 rounded-lg border border-white/10">
-              <h3 className="font-accent text-base font-bold text-white mb-1 line-clamp-1" data-testid={`text-celebrity-name-${celebrity.id}`}>
+          <div className="absolute bottom-0 left-0 right-0 p-1.5">
+            <div className="bg-black/80 backdrop-blur-md p-1.5 rounded-lg border border-white/10">
+              <h3 className="font-accent text-sm font-bold text-white mb-0.5 line-clamp-1" data-testid={`text-celebrity-name-${celebrity.id}`}>
                 {celebrity.name}
               </h3>
               
-              <div className="flex items-center gap-1.5 mb-1.5 flex-wrap">
-                <Badge variant="secondary" className="text-[10px] px-1.5 py-0" data-testid={`badge-category-${celebrity.id}`}>
+              <div className="flex items-center gap-1 mb-1 flex-wrap">
+                <Badge variant="secondary" className="text-[9px] px-1 py-0 h-4" data-testid={`badge-category-${celebrity.id}`}>
                   {celebrity.category}
                 </Badge>
-                <div className="flex items-center gap-0.5 text-white/90 text-[10px]" data-testid={`text-location-${celebrity.id}`}>
-                  <MapPin className="w-2.5 h-2.5" />
+                <div className="flex items-center gap-0.5 text-white/90 text-[9px]" data-testid={`text-location-${celebrity.id}`}>
+                  <MapPin className="w-2 h-2" />
                   <span className="line-clamp-1">{celebrity.location}</span>
                 </div>
               </div>
 
               <div className="flex items-center justify-between">
-                <div className="flex gap-1.5">
-                  {celebrity.socialLinks.slice(0, 3).map((link, idx) => {
+                <div className="flex gap-1">
+                  {celebrity.socialLinks.slice(0, 2).map((link, idx) => {
                     const Icon = link.includes('instagram') ? SiInstagram : 
                                  link.includes('youtube') ? SiYoutube : SiX;
                     return (
@@ -103,18 +103,18 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
                         }}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-6 h-6 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
+                        className="w-5 h-5 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
                         data-testid={`link-social-${idx}`}
                       >
-                        <Icon className="w-3 h-3 text-white" />
+                        <Icon className="w-2.5 h-2.5 text-white" />
                       </a>
                     );
                   })}
                 </div>
 
                 {celebrity.views > 0 && (
-                  <div className="flex items-center gap-0.5 text-white/80 text-[10px]" data-testid={`text-views-${celebrity.id}`}>
-                    <Eye className="w-2.5 h-2.5" />
+                  <div className="flex items-center gap-0.5 text-white/80 text-[9px]" data-testid={`text-views-${celebrity.id}`}>
+                    <Eye className="w-2 h-2" />
                     {celebrity.views}
                   </div>
                 )}

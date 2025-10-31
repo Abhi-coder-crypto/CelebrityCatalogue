@@ -23,3 +23,4 @@
 [x] 23. Updated Featured section to show most liked celebrities (sorted by likes descending)
 [x] 24. Updated Trending section to show most viewed celebrities (sorted by views descending)
 [x] 25. Fixed MongoStorage decrementCelebrityLikes to prevent negative values using conditional updates
+[x] 26. FIXED celebrity card image positioning - added object-top to ensure faces are always visible at the top, made info card even smaller (reduced all padding, fonts, and spacing), darker background for better contrast
