@@ -63,13 +63,13 @@ export default function CelebrityProfile() {
     <div className="min-h-screen">
       <Navigation />
 
-      <div className="relative h-96 md:h-[500px] overflow-hidden bg-muted">
+      <div className="relative h-80 md:h-[450px] overflow-hidden bg-muted">
         <img
           src={celebrity.image}
           alt={celebrity.name}
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/20" />
         
         <div className="absolute top-20 left-4 md:top-24 md:left-6 z-50">
           <Button 

@@ -138,7 +138,7 @@ export default function Home() {
               </div>
 
               {isLoading ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
                   {[...Array(8)].map((_, i) => (
                     <div key={i} className="aspect-[3/4] glassmorphic rounded-2xl animate-pulse" />
                   ))}
@@ -148,7 +148,7 @@ export default function Home() {
                   <p className="text-muted-foreground text-lg">No celebrities found matching your criteria</p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
                   {filteredCelebrities.map((celebrity) => (
                     <CelebrityCard
                       key={celebrity.id}

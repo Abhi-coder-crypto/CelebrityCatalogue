@@ -34,7 +34,7 @@ export function FeaturedSection({ celebrities, onToggleFavorite, favorites }: Fe
                 Featured Celebrities
               </h2>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {featured.map((celebrity) => (
                 <CelebrityCard
                   key={celebrity.id}
@@ -61,7 +61,7 @@ export function FeaturedSection({ celebrities, onToggleFavorite, favorites }: Fe
                 Trending Now
               </h2>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {trending.map((celebrity) => (
                 <CelebrityCard
                   key={celebrity.id}

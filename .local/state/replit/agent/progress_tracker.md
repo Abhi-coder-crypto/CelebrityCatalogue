@@ -10,3 +10,5 @@
 [x] 10. FIXED scroll-to-top button positioning issue - wrapped Button in fixed-position div wrapper so it properly floats on the screen and follows user's scroll (was being overridden by Button's relative positioning)
 [x] 11. Fixed celebrity profile image - reduced height to 500px, added object-top to focus on face/upper body and prevent stretching
 [x] 12. Fixed back button navigation - now uses window.history.back() to return to previous page (category) instead of always going to home page
+[x] 13. Changed mobile view to 2 columns (grid-cols-2) for all celebrity cards on Home, CategoryPage, and FeaturedSection
+[x] 14. Improved celebrity profile image - reduced height to 450px, centered object position, lighter gradient overlay for cleaner look
