@@ -44,11 +44,10 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
       onClick={handleCardClick}
     >
       <div className="relative aspect-[3/4] overflow-hidden bg-muted">
-          <div className={`absolute inset-0 ${categoryBg}`} />
           <img 
             src={celebrity.image} 
             alt={celebrity.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-overlay"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
