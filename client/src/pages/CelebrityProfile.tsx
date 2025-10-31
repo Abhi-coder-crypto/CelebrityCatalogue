@@ -71,15 +71,15 @@ export default function CelebrityProfile() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         
-        <div className="absolute top-4 left-4 md:top-24 md:left-8">
+        <div className="absolute top-4 left-4 md:top-6 md:left-6">
           <Link href="/">
             <Button 
+              size="icon"
               variant="outline" 
-              className="bg-black/60 backdrop-blur-md border-white/30 text-white hover:bg-black/80 shadow-lg"
+              className="bg-black/60 backdrop-blur-md border-white/30 text-white hover:bg-black/80 shadow-lg rounded-full h-10 w-10"
               data-testid="button-back"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
+              <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
         </div>
