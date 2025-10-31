@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { categories } from "@shared/schema";
-import { categoryIcons, categoryColors, categoryBackgrounds } from "@shared/categoryAssets";
+import { categoryIcons, categoryColors, categoryCardBackgrounds } from "@shared/categoryAssets";
 
 interface CategoryGridProps {
   celebrityCounts?: Record<string, number>;
@@ -30,7 +30,7 @@ export function CategoryGrid({ celebrityCounts = {} }: CategoryGridProps) {
           {categories.map((category, index) => {
             const Icon = categoryIcons[category];
             const gradient = categoryColors[category];
-            const backgroundImage = categoryBackgrounds[category];
+            const backgroundImage = categoryCardBackgrounds[category];
             const count = celebrityCounts[category] || 0;
 
             return (
