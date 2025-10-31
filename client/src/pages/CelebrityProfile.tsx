@@ -63,25 +63,24 @@ export default function CelebrityProfile() {
     <div className="min-h-screen">
       <Navigation />
 
-      <div className="relative h-96 md:h-[600px] overflow-hidden">
+      <div className="relative h-96 md:h-[500px] overflow-hidden bg-muted">
         <img
           src={celebrity.image}
           alt={celebrity.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         
         <div className="absolute top-20 left-4 md:top-24 md:left-6 z-50">
-          <Link href="/">
-            <Button 
-              size="icon"
-              variant="outline" 
-              className="bg-black/60 backdrop-blur-md border-white/30 text-white hover:bg-black/80 shadow-lg rounded-full h-12 w-12"
-              data-testid="button-back"
-            >
-              <ArrowLeft className="w-6 h-6" />
-            </Button>
-          </Link>
+          <Button 
+            size="icon"
+            variant="outline" 
+            className="bg-black/60 backdrop-blur-md border-white/30 text-white hover:bg-black/80 shadow-lg rounded-full h-12 w-12"
+            data-testid="button-back"
+            onClick={() => window.history.back()}
+          >
+            <ArrowLeft className="w-6 h-6" />
+          </Button>
         </div>
 
         {celebrity.isFeatured && (
