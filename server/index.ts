@@ -69,7 +69,7 @@ app.use((req, res, next) => {
   const port = parseInt(process.env.PORT || '5000', 10);
   
   // Try different host configurations to handle Windows networking issues
-  const hosts = ['127.0.0.1', 'localhost', '0.0.0.0'];
+  const hosts = ['0.0.0.0', '127.0.0.1', 'localhost'];
   let serverStarted = false;
 
   for (const host of hosts) {
