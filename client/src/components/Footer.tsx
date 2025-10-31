@@ -16,12 +16,12 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-chart-5 flex items-center justify-center">
-                <span className="font-display text-white text-xl font-bold">A</span>
+                <span className="font-display text-white text-xl font-bold">CB</span>
               </div>
-              <span className="font-display text-xl font-bold">Airavata</span>
+              <span className="font-display text-xl font-bold">Celebs Booking</span>
             </div>
             <p className="text-muted-foreground mb-6 text-sm">
-              India's premier celebrity booking platform. Connect with your favorite celebrities for unforgettable events.
+              Book your favorite celebrities for unforgettable events. Connect with India's finest talent.
             </p>
             <div className="flex gap-3">
               <a 
@@ -126,7 +126,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2024 Airavata. All rights reserved.
+            © 2024 Celebs Booking. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>

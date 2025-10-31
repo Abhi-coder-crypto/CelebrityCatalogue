@@ -30,9 +30,9 @@ export function Navigation() {
             <Link href="/">
               <div className="flex items-center gap-2 cursor-pointer" data-testid="link-logo">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-chart-5 flex items-center justify-center">
-                  <span className="font-display text-white text-xl font-bold">A</span>
+                  <span className="font-display text-white text-xl font-bold">CB</span>
                 </div>
-                <span className="font-display text-xl font-bold hidden sm:block">Airavata</span>
+                <span className="font-display text-xl font-bold hidden sm:block">Celebs Booking</span>
               </div>
             </Link>
 
