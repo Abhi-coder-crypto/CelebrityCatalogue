@@ -10,7 +10,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { EnquireModal } from "@/components/EnquireModal";
 import type { Celebrity } from "@shared/schema";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest, queryClient } from "@/lib/queryClient";
 
 export default function CelebrityProfile() {
   const [, params] = useRoute("/celebrity/:slug");
@@ -27,6 +27,9 @@ export default function CelebrityProfile() {
   const incrementViewMutation = useMutation({
     mutationFn: async (id: string) => {
       await apiRequest("POST", `/api/celebrities/${id}/view`, {});
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/celebrities"] });
     },
   });
 
