@@ -11,6 +11,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const celebrities = await storage.getAllCelebrities();
       res.json(celebrities);
     } catch (error) {
+      console.error("Error fetching celebrities:", error);
       res.status(500).json({ error: "Failed to fetch celebrities" });
     }
   });
