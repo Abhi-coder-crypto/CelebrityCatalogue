@@ -122,6 +122,7 @@ export default function CategoryPage() {
         selectedEventType={selectedEventType}
         onEventTypeChange={setSelectedEventType}
         onClearFilters={handleClearFilters}
+        hideCategoryFilter={true}
       />
 
       <section className="py-12 px-6 md:px-8">

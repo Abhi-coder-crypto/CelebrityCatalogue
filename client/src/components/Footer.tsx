@@ -1,18 +1,12 @@
 import { Link } from "wouter";
 import { SiInstagram, SiX, SiLinkedin, SiFacebook } from "react-icons/si";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { categories } from "@shared/schema";
 
 export function Footer() {
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-  };
-
   return (
     <footer className="border-t border-white/10 mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-chart-5 flex items-center justify-center">
@@ -99,28 +93,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <h4 className="font-accent font-semibold mb-4">Newsletter</h4>
-            <p className="text-muted-foreground text-sm mb-4">
-              Subscribe to get updates on new celebrities and exclusive offers
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="space-y-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="glassmorphic border-white/10 h-10"
-                data-testid="input-newsletter"
-              />
-              <Button 
-                type="submit" 
-                className="w-full bg-primary hover:bg-primary border border-primary-border h-10"
-                data-testid="button-newsletter-submit"
-              >
-                Subscribe
-              </Button>
-            </form>
           </div>
         </div>
 

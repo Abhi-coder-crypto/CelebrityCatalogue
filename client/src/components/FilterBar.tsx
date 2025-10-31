@@ -24,6 +24,7 @@ interface FilterBarProps {
   selectedEventType: string;
   onEventTypeChange: (value: string) => void;
   onClearFilters: () => void;
+  hideCategoryFilter?: boolean;
 }
 
 export function FilterBar({
@@ -40,6 +41,7 @@ export function FilterBar({
   selectedEventType,
   onEventTypeChange,
   onClearFilters,
+  hideCategoryFilter = false,
 }: FilterBarProps) {
   const hasActiveFilters = selectedCategory !== "all" || selectedGender !== "all" || 
                           selectedLanguage !== "all" || selectedLocation !== "all" || 
@@ -64,17 +66,19 @@ export function FilterBar({
             <SlidersHorizontal className="w-5 h-5 text-muted-foreground hidden md:block" />
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:flex gap-2 flex-1">
-              <Select value={selectedCategory} onValueChange={onCategoryChange}>
-                <SelectTrigger className="glassmorphic border-white/10 h-10 w-full lg:min-w-[140px]" data-testid="select-category">
-                  <SelectValue placeholder="Category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Categories</SelectItem>
-                  {categories.map((cat) => (
-                    <SelectItem key={cat} value={cat}>{cat}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              {!hideCategoryFilter && (
+                <Select value={selectedCategory} onValueChange={onCategoryChange}>
+                  <SelectTrigger className="glassmorphic border-white/10 h-10 w-full lg:min-w-[140px]" data-testid="select-category">
+                    <SelectValue placeholder="Category" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Categories</SelectItem>
+                    {categories.map((cat) => (
+                      <SelectItem key={cat} value={cat}>{cat}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              )}
 
               <Select value={selectedGender} onValueChange={onGenderChange}>
                 <SelectTrigger className="glassmorphic border-white/10 h-10 w-full lg:min-w-[120px]" data-testid="select-gender">
