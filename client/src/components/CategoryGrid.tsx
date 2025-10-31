@@ -43,7 +43,7 @@ export function CategoryGrid({ celebrityCounts = {} }: CategoryGridProps) {
               >
                 <Link href={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}>
                   <div 
-                    className="group relative overflow-hidden rounded-2xl p-8 h-64 hover-elevate active-elevate-2 cursor-pointer transition-all duration-300"
+                    className="group relative overflow-hidden rounded-2xl p-4 md:p-8 h-64 hover-elevate active-elevate-2 cursor-pointer transition-all duration-300"
                     style={{ perspective: "1000px" }}
                     data-testid={`card-category-${category.toLowerCase().replace(/\s+/g, '-')}`}
                   >

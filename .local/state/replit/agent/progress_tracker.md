@@ -27,3 +27,4 @@
 [x] 27. Migration complete - all dependencies installed, workflow configured with webview output and port 5000, application running successfully with MongoDB connected (155 celebrities loaded)
 [x] 28. FIXED all celebrity cards to have consistent size - set fixed height of 60px for info cards, removed flex-wrap, used truncate for text overflow, smaller fonts and padding, ensures all cards look identical and don't cover faces
 [x] 29. FIXED scroll to top on page navigation - added useEffect with window.scrollTo in CategoryPage and CelebrityProfile so users are taken to top of page instead of footer when clicking categories or celebrities
+[x] 30. FIXED category card text cutting off in mobile - reduced padding from p-8 to p-4 on mobile (p-4 md:p-8) so category names are fully visible and not shifted too far right
