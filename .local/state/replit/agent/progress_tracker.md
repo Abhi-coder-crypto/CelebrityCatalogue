@@ -12,3 +12,5 @@
 [x] 12. Fixed back button navigation - now uses window.history.back() to return to previous page (category) instead of always going to home page
 [x] 13. Changed mobile view to 2 columns (grid-cols-2) for all celebrity cards on Home, CategoryPage, and FeaturedSection
 [x] 14. Improved celebrity profile image - reduced height to 450px, centered object position, lighter gradient overlay for cleaner look
+[x] 15. Fixed celebrity cards - reduced dark overlay (from black/90 to black/70), made glassmorphic card smaller (p-4 to p-3), more image visible
+[x] 16. Fixed profile page overlap - reduced negative margin from -mt-32 to -mt-16 so content card doesn't cover hero image as much

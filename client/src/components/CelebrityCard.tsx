@@ -49,7 +49,7 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
             alt={celebrity.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
           {celebrity.isFeatured && (
             <Badge 
@@ -73,8 +73,8 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
             <Heart className={`w-5 h-5 ${isFavorite ? 'fill-red-500 text-red-500' : ''}`} />
           </Button>
 
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <div className="glassmorphic p-4 rounded-xl">
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            <div className="glassmorphic p-3 rounded-xl">
               <h3 className="font-accent text-xl font-semibold text-white mb-2" data-testid={`text-celebrity-name-${celebrity.id}`}>
                 {celebrity.name}
               </h3>
