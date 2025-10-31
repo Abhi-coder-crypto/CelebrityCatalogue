@@ -236,17 +236,17 @@ export default function CelebrityProfile() {
         </div>
       </div>
 
-      <div className="h-20" />
+      <div className="h-24 lg:h-20" />
 
       <Footer />
 
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent z-50">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/95 to-transparent z-[100] pointer-events-none">
         <Button
           onClick={() => setIsEnquireModalOpen(true)}
-          className="w-full bg-primary hover:bg-primary/90 border border-primary-border h-14 text-base font-semibold shadow-2xl"
+          className="w-full bg-primary hover:bg-primary/90 border-2 border-primary-border h-14 text-lg font-bold shadow-2xl pointer-events-auto"
           data-testid="button-enquire-now-mobile"
         >
-          Enquire Now
+          Book Now
         </Button>
       </div>
 
