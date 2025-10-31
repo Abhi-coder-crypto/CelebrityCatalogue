@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertEnquirySchema } from "@shared/schema";
 import { z } from "zod";
+import { emailService } from "./emailService";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get all celebrities
@@ -44,6 +45,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertEnquirySchema.parse(req.body);
       const enquiry = await storage.createEnquiry(validatedData);
+      
+      emailService.sendEnquiryNotification(enquiry).catch((error) => {
+        console.error('Failed to send email notification, but enquiry was saved:', error);
+      });
+      
       res.status(201).json(enquiry);
     } catch (error) {
       if (error instanceof z.ZodError) {

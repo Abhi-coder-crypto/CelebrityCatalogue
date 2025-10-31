@@ -70,7 +70,7 @@ Preferred communication style: Simple, everyday language.
 - `POST /api/celebrities/:id/view` - Increment view counter for analytics
 
 **Enquiry Endpoints**
-- `POST /api/enquiries` - Create new booking enquiry with validation
+- `POST /api/enquiries` - Create new booking enquiry with validation and email notification
 - `GET /api/enquiries` - Fetch all enquiries (admin functionality)
 
 **Response Patterns**
@@ -153,6 +153,13 @@ Preferred communication style: Simple, everyday language.
 - **tsx** - TypeScript execution for Node.js (development server)
 - **esbuild** - Fast JavaScript bundler for server production build
 
+### Email Notifications
+- **Nodemailer** - Email service for sending enquiry notifications via Gmail
+- Email notifications sent automatically when new enquiry is submitted
+- Configured via environment variables: `GMAIL_APP_PASSWORD` and `NOTIFICATION_EMAIL`
+- Email service gracefully handles missing credentials (logs warning but doesn't block enquiry submission)
+- HTML formatted emails with customer details, celebrity info, and enquiry purpose
+
 ### Third-Party Integrations (Planned)
 - **WhatsApp Business API** - Enquiry redirection with pre-filled messages (URL-based integration)
 - **Google Fonts CDN** - Typography system (Playfair Display, Inter, Montserrat)
@@ -161,4 +168,4 @@ Preferred communication style: Simple, everyday language.
 - PostCSS with Autoprefixer for CSS processing
 - Drizzle Kit for database migrations
 - Custom Vite configuration with path aliases and asset handling
-- Environment variables for database connection (DATABASE_URL)
+- Environment variables for database connection (MONGODB_URI) and email (GMAIL_APP_PASSWORD, NOTIFICATION_EMAIL)
