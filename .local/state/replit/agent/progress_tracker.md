@@ -18,3 +18,8 @@
 [x] 18. Configured workflow with webview output type and port 5000
 [x] 19. Verified application is running successfully (Email service warning is expected - not critical)
 [x] 20. Fixed celebrity cards text overlay - strengthened gradient, improved card background with solid dark overlay (bg-black/60), better text contrast and readability
+[x] 21. Made celebrity cards more compact - reduced padding, font sizes, and spacing so more of the celebrity image is visible
+[x] 22. Implemented likes tracking system - added likes field to schema, storage methods, API routes, and frontend integration
+[x] 23. Updated Featured section to show most liked celebrities (sorted by likes descending)
+[x] 24. Updated Trending section to show most viewed celebrities (sorted by views descending)
+[x] 25. Fixed MongoStorage decrementCelebrityLikes to prevent negative values using conditional updates
