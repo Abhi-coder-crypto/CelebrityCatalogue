@@ -26,3 +26,4 @@
 [x] 26. FIXED celebrity card image positioning - added object-top to ensure faces are always visible at the top, made info card even smaller (reduced all padding, fonts, and spacing), darker background for better contrast
 [x] 27. Migration complete - all dependencies installed, workflow configured with webview output and port 5000, application running successfully with MongoDB connected (155 celebrities loaded)
 [x] 28. FIXED all celebrity cards to have consistent size - set fixed height of 60px for info cards, removed flex-wrap, used truncate for text overflow, smaller fonts and padding, ensures all cards look identical and don't cover faces
+[x] 29. FIXED scroll to top on page navigation - added useEffect with window.scrollTo in CategoryPage and CelebrityProfile so users are taken to top of page instead of footer when clicking categories or celebrities

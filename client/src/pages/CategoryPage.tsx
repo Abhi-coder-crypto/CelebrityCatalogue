@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useRoute } from "wouter";
 import { ArrowLeft } from "lucide-react";
@@ -21,6 +21,10 @@ export default function CategoryPage() {
   const categoryName = categories.find(
     cat => cat.toLowerCase().replace(/\s+/g, '-') === categorySlug
   ) || "";
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [categorySlug]);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGender, setSelectedGender] = useState("all");

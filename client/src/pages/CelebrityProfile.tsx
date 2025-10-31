@@ -34,6 +34,10 @@ export default function CelebrityProfile() {
   });
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
+
+  useEffect(() => {
     if (celebrity) {
       incrementViewMutation.mutate(celebrity.id);
     }
