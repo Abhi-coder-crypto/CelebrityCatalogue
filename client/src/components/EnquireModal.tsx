@@ -28,9 +28,11 @@ const enquirySchema = z.object({
   userName: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   contact: z.string()
-    .regex(/^[+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,5}[-\s\.]?[0-9]{1,6}$/, 
-      "Please enter a valid phone number (e.g., +91 98765 43210 or 9876543210)")
-    .min(10, "Phone number must be at least 10 digits"),
+    .regex(/^[+]?[0-9\s\-\(\)\.]+$/, "Phone number can only contain digits, spaces, hyphens, and parentheses")
+    .refine((val) => {
+      const digitsOnly = val.replace(/\D/g, '');
+      return digitsOnly.length >= 10 && digitsOnly.length <= 15;
+    }, "Phone number must be 10-15 digits (e.g., +91 9876543210 or 9876543210)"),
   purpose: z.string().min(10, "Please provide more details about your enquiry"),
 });
 
