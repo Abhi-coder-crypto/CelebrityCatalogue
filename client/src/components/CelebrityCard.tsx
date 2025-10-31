@@ -49,7 +49,7 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
             alt={celebrity.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
           {celebrity.isFeatured && (
             <Badge 
@@ -73,19 +73,19 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
             <Heart className={`w-5 h-5 ${isFavorite ? 'fill-red-500 text-red-500' : ''}`} />
           </Button>
 
-          <div className="absolute bottom-0 left-0 right-0 p-4">
-            <div className="glassmorphic p-3 rounded-xl">
-              <h3 className="font-accent text-xl font-semibold text-white mb-2" data-testid={`text-celebrity-name-${celebrity.id}`}>
+          <div className="absolute bottom-0 left-0 right-0 p-3">
+            <div className="bg-black/60 backdrop-blur-md p-3 rounded-xl border border-white/10">
+              <h3 className="font-accent text-lg font-bold text-white mb-2 line-clamp-2" data-testid={`text-celebrity-name-${celebrity.id}`}>
                 {celebrity.name}
               </h3>
               
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
                 <Badge variant="secondary" className="text-xs" data-testid={`badge-category-${celebrity.id}`}>
                   {celebrity.category}
                 </Badge>
-                <div className="flex items-center gap-1 text-white/80 text-xs" data-testid={`text-location-${celebrity.id}`}>
+                <div className="flex items-center gap-1 text-white/90 text-xs" data-testid={`text-location-${celebrity.id}`}>
                   <MapPin className="w-3 h-3" />
-                  {celebrity.location}
+                  <span className="line-clamp-1">{celebrity.location}</span>
                 </div>
               </div>
 
@@ -103,7 +103,7 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
                         }}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-7 h-7 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors"
+                        className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
                         data-testid={`link-social-${idx}`}
                       >
                         <Icon className="w-3.5 h-3.5 text-white" />
@@ -113,7 +113,7 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
                 </div>
 
                 {celebrity.views > 0 && (
-                  <div className="flex items-center gap-1 text-white/70 text-xs" data-testid={`text-views-${celebrity.id}`}>
+                  <div className="flex items-center gap-1 text-white/80 text-xs" data-testid={`text-views-${celebrity.id}`}>
                     <Eye className="w-3 h-3" />
                     {celebrity.views}
                   </div>
