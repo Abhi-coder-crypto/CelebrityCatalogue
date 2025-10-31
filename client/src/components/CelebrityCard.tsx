@@ -73,51 +73,50 @@ export function CelebrityCard({ celebrity, onToggleFavorite, isFavorite }: Celeb
             <Heart className={`w-5 h-5 ${isFavorite ? 'fill-red-500 text-red-500' : ''}`} />
           </Button>
 
-          <div className="absolute bottom-0 left-0 right-0 p-1.5">
-            <div className="bg-black/80 backdrop-blur-md p-1.5 rounded-lg border border-white/10">
-              <h3 className="font-accent text-sm font-bold text-white mb-0.5 line-clamp-1" data-testid={`text-celebrity-name-${celebrity.id}`}>
+          <div className="absolute bottom-0 left-0 right-0 p-1">
+            <div className="bg-black/85 backdrop-blur-md p-2 rounded-lg border border-white/10 h-[60px] flex flex-col justify-between">
+              <h3 className="font-accent text-xs font-bold text-white line-clamp-1 leading-tight" data-testid={`text-celebrity-name-${celebrity.id}`}>
                 {celebrity.name}
               </h3>
               
-              <div className="flex items-center gap-1 mb-1 flex-wrap">
-                <Badge variant="secondary" className="text-[9px] px-1 py-0 h-4" data-testid={`badge-category-${celebrity.id}`}>
-                  {celebrity.category}
-                </Badge>
-                <div className="flex items-center gap-0.5 text-white/90 text-[9px]" data-testid={`text-location-${celebrity.id}`}>
-                  <MapPin className="w-2 h-2" />
-                  <span className="line-clamp-1">{celebrity.location}</span>
+              <div className="flex items-center justify-between gap-1">
+                <div className="flex items-center gap-1 min-w-0 flex-1">
+                  <Badge variant="secondary" className="text-[8px] px-1 py-0 h-3.5 flex-shrink-0" data-testid={`badge-category-${celebrity.id}`}>
+                    {celebrity.category}
+                  </Badge>
+                  <div className="flex items-center gap-0.5 text-white/80 text-[8px] min-w-0" data-testid={`text-location-${celebrity.id}`}>
+                    <MapPin className="w-2 h-2 flex-shrink-0" />
+                    <span className="truncate">{celebrity.location}</span>
+                  </div>
                 </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex gap-1">
-                  {celebrity.socialLinks.slice(0, 2).map((link, idx) => {
-                    const Icon = link.includes('instagram') ? SiInstagram : 
-                                 link.includes('youtube') ? SiYoutube : SiX;
-                    return (
-                      <a
-                        key={idx}
-                        href={link}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                        }}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-5 h-5 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
-                        data-testid={`link-social-${idx}`}
-                      >
-                        <Icon className="w-2.5 h-2.5 text-white" />
-                      </a>
-                    );
-                  })}
-                </div>
-
                 {celebrity.views > 0 && (
-                  <div className="flex items-center gap-0.5 text-white/80 text-[9px]" data-testid={`text-views-${celebrity.id}`}>
+                  <div className="flex items-center gap-0.5 text-white/70 text-[8px] flex-shrink-0" data-testid={`text-views-${celebrity.id}`}>
                     <Eye className="w-2 h-2" />
                     {celebrity.views}
                   </div>
                 )}
+              </div>
+
+              <div className="flex gap-1">
+                {celebrity.socialLinks.slice(0, 2).map((link, idx) => {
+                  const Icon = link.includes('instagram') ? SiInstagram : 
+                               link.includes('youtube') ? SiYoutube : SiX;
+                  return (
+                    <a
+                      key={idx}
+                      href={link}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                      }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-4 h-4 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
+                      data-testid={`link-social-${idx}`}
+                    >
+                      <Icon className="w-2 h-2 text-white" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
