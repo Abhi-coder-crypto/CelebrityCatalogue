@@ -49,6 +49,7 @@ export type Enquiry = typeof enquiries.$inferSelect;
 export const categories = [
   "Singers",
   "Actors",
+  "Actresses",
   "Comedians",
   "Influencers",
   "Choreographers",

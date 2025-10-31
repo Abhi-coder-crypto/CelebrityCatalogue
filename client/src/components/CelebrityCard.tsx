@@ -16,6 +16,7 @@ interface CelebrityCardProps {
 const categoryBackgrounds = {
   "Singers": "bg-gradient-to-br from-purple-600/30 to-pink-600/30",
   "Actors": "bg-gradient-to-br from-blue-600/30 to-cyan-600/30",
+  "Actresses": "bg-gradient-to-br from-rose-600/30 to-pink-600/30",
   "Comedians": "bg-gradient-to-br from-yellow-600/30 to-orange-600/30",
   "Influencers": "bg-gradient-to-br from-green-600/30 to-emerald-600/30",
   "Choreographers": "bg-gradient-to-br from-red-600/30 to-rose-600/30",

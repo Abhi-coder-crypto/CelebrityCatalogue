@@ -240,6 +240,16 @@ export default function CelebrityProfile() {
 
       <Footer />
 
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent z-50">
+        <Button
+          onClick={() => setIsEnquireModalOpen(true)}
+          className="w-full bg-primary hover:bg-primary/90 border border-primary-border h-14 text-base font-semibold shadow-2xl"
+          data-testid="button-enquire-now-mobile"
+        >
+          Enquire Now
+        </Button>
+      </div>
+
       <EnquireModal
         isOpen={isEnquireModalOpen}
         onClose={() => setIsEnquireModalOpen(false)}
