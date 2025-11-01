@@ -31,4 +31,5 @@
 [x] 31. CHANGED Motivational Speakers category background image - replaced with stock image of motivational speaker on stage inspiring audience, more relevant and professional
 [x] 32. FIXED category text cutting in mobile and Motivational Speakers image - reduced font size from text-xl to text-base on mobile, added leading-tight, changed to proper Unsplash URL instead of local path so image loads correctly
 [x] 33. ADDED category filters to Featured and Trending sections - users can now filter by "All" or specific category (Singers, Actors, etc.) to see top featured/trending celebrities from each category, makes UI more interactive and showcases diversity across all categories
+[x] 34. CONFIGURED Gmail email service - added GMAIL_APP_PASSWORD and NOTIFICATION_EMAIL secrets, email service now fully operational and ready to send notifications
 [x] 34. MIGRATION VERIFIED - Fixed cross-env dependency issue, configured workflow with webview output and port 5000, application running successfully on server at 0.0.0.0:5000 (November 1, 2025)
